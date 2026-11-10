@@ -113,18 +113,46 @@ After the repair I:
 - acquired input signals through the oscilloscope channels; and
 - used the signal-generation function successfully.
 
-The finished board is a working prototype. A future layout pass can improve component spacing, routing clarity and access for soldering and probing while keeping the tested circuit architecture.
+Revision A is the assembled and functionally tested prototype. I then developed Revision B to refine the PCB layout while retaining the circuit architecture and enclosure constraints.
+
+## Revision B — PCB layout improvements
+
+After bringing up Revision A, I redesigned the component placement and routing to give the power, digital and analog sections a clearer arrangement. I retained the four-layer stack-up, internal GND and +3V3 planes, board outline and connector positions.
+
+<p align="center">
+  <a href="images/pcb-layout-revision-b.png"><img src="images/pcb-layout-revision-b.png" alt="Revision B PCB layout in KiCad" width="520"></a>
+</p>
+
+<p align="center"><em>Revision B component placement and routing.</em></p>
+
+| Change | Purpose |
+|---|---|
+| Reorganised the power, RP2040 and analog sections | Make the layout easier to follow during assembly, inspection and probing |
+| Reworked the crystal network and routed XIN/XOUT entirely on the front layer, removing four vias | Reduce layer changes in the oscillator connections and keep the network together |
+| Removed an unused via from the USB D+ route | Remove an unused via barrel and improve symmetry between the data lines |
+| Used 0.6 mm vias with 0.3 mm drills, retaining 0.5/0.3 mm vias where space required | Provide larger copper rings around the drilled holes while allowing compact routing |
+
+<p align="center">
+  <a href="images/pcb-3d-revision-b.png"><img src="images/pcb-3d-revision-b.png" alt="Revision B PCB 3D view in KiCad" width="520"></a>
+</p>
+
+<p align="center"><em>Revision B PCB 3D view.</em></p>
+
+Revision B documents the completed PCB layout improvements. The assembly, repair and functional results above describe Revision A.
+
+[Open the Revision B KiCad project files →](hardware/revision-b/)
 
 ## Repository contents
 
 | Location | Contents |
 |---|---|
 | [hardware/revision-a](hardware/revision-a/) | KiCad project, schematics, PCB layout and project libraries |
+| [hardware/revision-b](hardware/revision-b/) | Revised KiCad project, schematics, PCB layout and project libraries |
 | [docs/testing-and-repair-report.md](docs/testing-and-repair-report.md) | Hardware measurements, USB fault isolation, repair steps and final functional tests |
 | [images](images/) | Presentation photographs and links to the original photographs |
 | [SOURCE_ATTRIBUTION.md](SOURCE_ATTRIBUTION.md) | Course and Scoppy source acknowledgement |
 
-Open `hardware/revision-a/Scoppy34420file.kicad_pro` in KiCad with the adjacent library folders and tables kept together.
+Open `hardware/revision-a/Scoppy34420file.kicad_pro` for the prototype or `hardware/revision-b/Scoppy_Revision_B.kicad_pro` for the revised layout. Keep each project's adjacent schematics, library folders and tables together.
 
 ## Skills demonstrated
 

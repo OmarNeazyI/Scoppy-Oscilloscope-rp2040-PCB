@@ -1,0 +1,370 @@
+(kicad_sch
+	(version 20260306)
+	(generator "eeschema")
+	(generator_version "10.0")
+	(uuid "8c0b3d8b-46d3-4173-ab1e-a61765f77d61")
+	(paper "A4")
+	(title_block
+		(title "Scoppy - Design & Manufacturing of Electronics")
+		(date "2024-01-16")
+		(rev "B")
+		(company "HSRW")
+		(comment 1 "Author: Omar Neazy")
+	)
+	(lib_symbols)
+	(text "Stackup: 4layer ENIG 1,6mm 140um\nSignal\nGND\nPower\nSignal/GND"
+		(exclude_from_sim no)
+		(at 17.018 182.118 0)
+		(effects
+			(font
+				(size 3 3)
+			)
+			(justify left)
+		)
+		(uuid "450d4126-c165-4eb6-9db5-1de1ee0c29de")
+	)
+	(text "Scoppy \nDesign and Manufacturing of Electronics "
+		(exclude_from_sim no)
+		(at 151.638 33.782 0)
+		(effects
+			(font
+				(size 8 8)
+				(thickness 1.4)
+				(bold yes)
+			)
+		)
+		(uuid "fbe46db3-720a-4ddd-9dc6-f4d55691237e")
+	)
+	(wire
+		(pts
+			(xy 95.25 95.25) (xy 107.95 95.25)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "05dd5ee7-29e5-4334-adad-5672856b5075")
+	)
+	(wire
+		(pts
+			(xy 186.69 92.71) (xy 201.93 92.71)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "171ae64d-279d-4412-b6b4-d088b9741e94")
+	)
+	(wire
+		(pts
+			(xy 186.69 87.63) (xy 201.93 87.63)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "6d22557a-5234-4034-a884-4c8f005b0bae")
+	)
+	(wire
+		(pts
+			(xy 186.69 97.79) (xy 201.93 97.79)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "8d17c99a-6b6f-47e9-98ce-c2ac12455f49")
+	)
+	(wire
+		(pts
+			(xy 95.25 88.9) (xy 107.95 88.9)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b005e126-f331-4b4f-88a8-b39c0fdf7aa7")
+	)
+	(wire
+		(pts
+			(xy 186.69 102.87) (xy 201.93 102.87)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "fb4909f9-667b-4a82-8a64-6b1f6a8ddf09")
+	)
+	(sheet
+		(at 107.95 72.39)
+		(size 78.74 60.96)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 255 255 194 1)
+		)
+		(uuid "28e38bc4-139b-449c-b974-2f61ea937015")
+		(property "Sheetname" "Digital"
+			(at 107.95 69.8134 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(face "KiCad Font")
+					(size 5 5)
+					(thickness 1)
+					(bold yes)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "Digital.kicad_sch"
+			(at 107.95 133.9346 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(pin "USB_D+" bidirectional
+			(at 107.95 88.9 180)
+			(uuid "b84b90a5-ef42-4da2-a6c2-b94c845d99dd")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "USB_D-" bidirectional
+			(at 107.95 95.25 180)
+			(uuid "c590c023-e61a-4e99-99f3-85019dc7da32")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "CH1+" output
+			(at 186.69 87.63 0)
+			(uuid "fd5f99c2-9237-48a6-9fc3-cda690cfcbe0")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "CH2+" output
+			(at 186.69 92.71 0)
+			(uuid "10f78b20-fac0-41d2-a02c-beab8ff6e2fd")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "GPIO26_ADC0" input
+			(at 186.69 97.79 0)
+			(uuid "5899ce6c-e2ae-4364-9fb7-e81a42067640")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "GPIO27_ADC1" input
+			(at 186.69 102.87 0)
+			(uuid "94857528-1dd0-4c85-8a98-3edcb7f22eec")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(instances
+			(project "Scoppy_Revision_B"
+				(path "/8c0b3d8b-46d3-4173-ab1e-a61765f77d61"
+					(page "3")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 201.93 72.39)
+		(size 78.74 60.96)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 255 229 191 1)
+		)
+		(uuid "6ed4e6e7-887b-4746-82aa-ec5899d74d30")
+		(property "Sheetname" "Analog"
+			(at 201.93 69.8134 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 5 5)
+					(thickness 1)
+					(bold yes)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "Analog.kicad_sch"
+			(at 201.93 133.9346 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(pin "CH1+" input
+			(at 201.93 87.63 180)
+			(uuid "733f25cf-57e1-47a1-9554-361f73bec591")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "CH2+" input
+			(at 201.93 92.71 180)
+			(uuid "5d699021-391e-406d-aebc-72d27c3721da")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "GPIO26_ADC0" output
+			(at 201.93 97.79 180)
+			(uuid "f9de6811-5856-44de-abc4-8d5d4655b093")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "GPIO27_ADC1" output
+			(at 201.93 102.87 180)
+			(uuid "8d863c16-c972-42ab-b2e3-e0103a962148")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(instances
+			(project "Scoppy_Revision_B"
+				(path "/8c0b3d8b-46d3-4173-ab1e-a61765f77d61"
+					(page "4")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 16.51 72.39)
+		(size 78.74 60.96)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 255 153 0 1)
+		)
+		(uuid "89a55b4e-8612-4fb2-9376-709aef783486")
+		(property "Sheetname" "Power"
+			(at 16.51 69.8134 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(face "KiCad Font")
+					(size 5 5)
+					(thickness 1)
+					(bold yes)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "Power.kicad_sch"
+			(at 16.51 133.9346 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(pin "USB_D+" bidirectional
+			(at 95.25 88.9 0)
+			(uuid "eba32ed9-6774-41e0-8be0-1360b8802d33")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "USB_D-" bidirectional
+			(at 95.25 95.25 0)
+			(uuid "7096793c-13f8-491a-a01c-c4d687864094")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(instances
+			(project "Scoppy_Revision_B"
+				(path "/8c0b3d8b-46d3-4173-ab1e-a61765f77d61"
+					(page "2")
+				)
+			)
+		)
+	)
+	(sheet_instances
+		(path "/"
+			(page "1")
+		)
+	)
+	(embedded_fonts no)
+)

@@ -1,0 +1,4 @@
+(sym_lib_table
+	(version 7)
+	(lib (name "DME_Template") (type "KiCad") (uri "${KIPRJMOD}/LIB/symbols/DME_Template.kicad_sym") (options "") (descr ""))
+)

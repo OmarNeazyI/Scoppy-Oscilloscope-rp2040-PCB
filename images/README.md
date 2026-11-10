@@ -12,6 +12,8 @@
 
 - [Revision A PCB layout](pcb-layout-revision-a.png) · [Original layout screenshot](pcb-layout-source.png)
 - [Revision A 3D view](pcb-3d-revision-a.png) · [Original 3D screenshot](pcb-3d-source.png)
+- [Revision B PCB layout](pcb-layout-revision-b.png)
+- [Revision B 3D view](pcb-3d-revision-b.png)
 
 ## Additional build photographs
 
@@ -21,4 +23,4 @@
 
 The main project page uses the presentation photographs. The original photographs are included here as additional build documentation.
 
-[Project overview](../README.md) · [KiCad source files](../hardware/revision-a/)
+[Project overview](../README.md) · [Revision A source files](../hardware/revision-a/) · [Revision B source files](../hardware/revision-b/)

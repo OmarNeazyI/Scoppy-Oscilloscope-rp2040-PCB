@@ -2,7 +2,7 @@
 
 ## Project outcome
 
-I assembled the PCB and debugged and tested the hardware until I had a working prototype. The completed board loads firmware, connects to the Scoppy Android application, acquires signals and generates signals.
+I assembled the Revision A PCB and debugged and tested the hardware until I had a working prototype. The completed board loads firmware, connects to the Scoppy Android application, acquires signals and generates signals.
 
 <p align="center">
   <a href="../images/pcb-top-presentation.png"><img src="../images/pcb-top-presentation.png" alt="Assembled Scoppy PCB" width="520"></a>
