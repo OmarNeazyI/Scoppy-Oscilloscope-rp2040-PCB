@@ -4,7 +4,9 @@
 
 I assembled the PCB and debugged and tested the hardware until I had a working prototype. The completed board loads firmware, connects to the Scoppy Android application, acquires signals and generates signals.
 
-<a href="../images/pcb-top-presentation.png"><img src="../images/pcb-top-presentation.png" alt="Assembled Scoppy PCB" width="520"></a>
+<p align="center">
+  <a href="../images/pcb-top-presentation.png"><img src="../images/pcb-top-presentation.png" alt="Assembled Scoppy PCB" width="520"></a>
+</p>
 
 [Original PCB photograph](../images/pcb-top-original.jpg) · [All project photographs](../images/README.md)
 
@@ -55,7 +57,8 @@ The USB paths in the PCB are:
 | R4 | Approximately 27 Ω | Correct USB series resistance |
 | D+ to D− at the USB-side network | Approximately 0.7–0.8 Ω | Low-resistance short between the data lines |
 | Multimeter probe baseline | Approximately 0.6 Ω | Confirmed that the D+/D− reading was close to a direct short |
-| D+ to D− on the RP2040 side of R3/R4 | 52.7–54.01 Ω | The two 27 Ω resistors separated the RP2040 from the upstream short |
+| Between the RP2040-side pads of R3 and R4 | 54.01 Ω | Consistent with both 27 Ω resistors connected through an upstream short |
+| Directly between the RP2040 USB D+ and D− pins | 52.7 Ω | Supported the upstream-short diagnosis rather than a direct bridge between the RP2040 USB pins |
 | End-to-end D+ and D− paths | Approximately 30 Ω each | Data paths passed through their series resistors |
 
 The approximately 54 Ω reading was especially useful: it matched the two 27 Ω resistors in series through the short on the connector side. This focused the repair on the USB connector, protection components and L1 rather than the RP2040 side of the circuit.
@@ -71,13 +74,24 @@ The approximately 54 Ω reading was especially useful: it matched the two 27 Ω 
 | RV1 | Approximately 516 kΩ in circuit |
 | RV2 | Approximately 600 kΩ in circuit |
 
-I also checked continuity through the crystal network, the XIN/XOUT connections and the relevant ground connections.
+## Supporting checks
+
+| Check | Recorded result | Interpretation |
+|---|---|---|
+| USB data lines to GND | Over-range on the selected resistance range at all four tested D1 data pads | No hard data-to-ground short detected |
+| USB data lines to VBUS | Over-range on the selected resistance range at all four tested D1 data pads | No hard data-to-VBUS short detected |
+| BOOTSEL path | Continuity from U2 to R1, from R1 to the switch node, and from the switch ground terminal to GND; SW1 closed when pressed | Resistor, switch and associated connections behaved as expected |
+| USB-C configuration resistors | R6 and R7 measured approximately 5 kΩ each, with one side of each connected to GND | Consistent with the intended CC pull-down network |
+| Crystal network | Continuity through the corresponding Y1, R5 and RP2040 XIN/XOUT connections; both crystal ground pads connected to GND | Static connections checked; oscillation was not measured during these tests |
+| QSPI flash pins | No hard shorts to GND detected on the tested signal pins | No obvious QSPI signal-to-ground bridge found |
+
+These supporting checks helped narrow the investigation. The low resistance between D+ and D− remained the main fault to isolate.
 
 ## Repair
 
-I found a short underneath/around L1. I removed and replaced L1, then repeated the resistance checks and confirmed that the short was no longer present.
+I found a short underneath L1. I removed and replaced L1, then repeated the resistance checks and confirmed that the USB data-line short was no longer present.
 
-The USB-C connector also required rework because its data and power pads were very small. I desoldered and resoldered J1 several times until the connections were correct.
+J1 also required repeated rework to correct soldering shorts around its fine-pitch USB-C data and power pads. I desoldered and resoldered the connector several times until the connections were correct. After the rework, USB communication worked and the board completed the functional checks below.
 
 ## Final validation
 
@@ -89,7 +103,9 @@ The USB-C connector also required rework because its data and power pads were ve
 | Signal acquisition | Successful |
 | Signal generation | Successful |
 
-<a href="../images/pcb-bottom-presentation.png"><img src="../images/pcb-bottom-presentation.png" alt="Scoppy PCB underside" width="520"></a>
+<p align="center">
+  <a href="../images/pcb-bottom-presentation.png"><img src="../images/pcb-bottom-presentation.png" alt="Scoppy PCB underside" width="520"></a>
+</p>
 
 [Original underside photograph](../images/pcb-bottom-original.jpg) · [Photo sources](../images/README.md)
 

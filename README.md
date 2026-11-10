@@ -4,11 +4,13 @@
 
 This project is a compact RP2040-based oscilloscope with two analog input channels, a digital input header and a USB-C connection to the Scoppy Android application.
 
-I completed the project individually as part of Design and Manufacturing of Electronics at Hochschule Rhein-Waal. Starting with the course-provided circuit schematic and mechanical template, I completed the four-layer PCB placement and routing in KiCad, assembled the SMD components, and debugged and tested the hardware until I had a working prototype. This included troubleshooting the USB-C interface and locating a short around L1.
+I completed the project individually as part of Design and Manufacturing of Electronics at Hochschule Rhein-Waal. Starting with the course-provided circuit schematic and mechanical template, I completed the four-layer PCB placement and routing in KiCad, assembled the SMD components, and debugged and tested the hardware until I had a working prototype. This included troubleshooting the USB-C interface and locating a short underneath L1.
 
 **Final result:** the board successfully loads the firmware, connects to the Scoppy application, acquires input signals and generates output signals.
 
-<a href="images/enclosure-presentation.png"><img src="images/enclosure-presentation.png" alt="Completed Scoppy oscilloscope" width="520"></a>
+<p align="center">
+  <a href="images/enclosure-presentation.png"><img src="images/enclosure-presentation.png" alt="Completed Scoppy oscilloscope" width="520"></a>
+</p>
 
 [Original enclosure photograph](images/enclosure-original.jpg) · [All project photographs](images/README.md)
 
@@ -50,17 +52,23 @@ flowchart TD
 
 ## Revision A PCB layout and 3D view
 
-<img src="images/pcb-layout-revision-a.png" alt="Revision A PCB layout in KiCad" width="520">
+<p align="center">
+  <img src="images/pcb-layout-revision-a.png" alt="Revision A PCB layout in KiCad" width="520">
+</p>
 
-*Revision A PCB placement and routing in KiCad.*
+<p align="center"><em>Revision A PCB placement and routing in KiCad.</em></p>
 
-<img src="images/pcb-3d-revision-a.png" alt="Revision A PCB 3D view in KiCad" width="520">
+<p align="center">
+  <img src="images/pcb-3d-revision-a.png" alt="Revision A PCB 3D view in KiCad" width="520">
+</p>
 
-*Revision A 3D view showing component placement and connector arrangement.*
+<p align="center"><em>Revision A 3D view showing component placement and connector arrangement.</em></p>
 
 ## PCB design and SMD assembly
 
-<a href="images/pcb-top-presentation.png"><img src="images/pcb-top-presentation.png" alt="Assembled Scoppy PCB" width="520"></a>
+<p align="center">
+  <a href="images/pcb-top-presentation.png"><img src="images/pcb-top-presentation.png" alt="Assembled Scoppy PCB" width="520"></a>
+</p>
 
 I routed the PCB around the fixed connector positions and enclosure dimensions and implemented the required four-layer arrangement with internal ground and 3.3 V planes.
 
@@ -68,7 +76,9 @@ For assembly, I applied solder paste using both a stencil and a solder-paste dis
 
 This included repeated rework of the small USB-C connector pads and replacement of L1 while debugging the USB connection.
 
-<a href="images/pcb-bottom-presentation.png"><img src="images/pcb-bottom-presentation.png" alt="Scoppy PCB underside" width="520"></a>
+<p align="center">
+  <a href="images/pcb-bottom-presentation.png"><img src="images/pcb-bottom-presentation.png" alt="Scoppy PCB underside" width="520"></a>
+</p>
 
 [Original PCB photographs](images/README.md)
 
@@ -84,9 +94,12 @@ The board powered up and the status LED illuminated, but it initially failed to 
 | RUN input | 3.26 V |
 | USB series resistors | Approximately 27 Ω each |
 | D+ to D− at the USB-side network | Approximately 0.7–0.8 Ω |
-| D+ to D− on the MCU side of both resistors | Approximately 52.7–54.01 Ω |
+| Between the RP2040-side pads of R3 and R4 | 54.01 Ω |
+| Directly between the RP2040 USB D+ and D− pins | 52.7 Ω |
 
-The measurements showed that the power system was operating and placed the short on the USB side of the series resistors. I found a short underneath/around L1, replaced the component and confirmed that the short was gone. I also desoldered and resoldered the USB-C connector to correct the small data and power-pad connections.
+The supply and reset measurements were normal. The approximately 54 Ω reading matched the two 27 Ω series resistors connected through an upstream short, focusing the investigation on the USB connector, protection and filtering network. Supporting checks found no hard shorts from the USB data lines to ground or VBUS, and the BOOTSEL path and crystal-network connections passed static continuity checks.
+
+I found a short underneath L1, removed and replaced the component, and confirmed that the data-line short was gone. I also desoldered and resoldered J1 several times to correct soldering shorts around its fine-pitch USB-C data and power pads. After the rework, USB communication worked and I completed the firmware and Scoppy functional checks.
 
 [Read the Testing and Repair Report →](docs/testing-and-repair-report.md)
 
